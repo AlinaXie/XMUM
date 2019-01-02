@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="./css/layui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header" style="background-color: #BFD8D2">
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left" style="background-color: #BFD8D2; position: relative; right: -170px;border-bottom: 1px #eb7350 solid">
+            <li class="layui-nav-item"><a href="homepage.html" target="_self">Home</a></li>
+            <li class="layui-nav-item"><a href="AllItem.html" target="_self">All items</a></li>
+            <li class="layui-nav-item"><a href="For_sale.html" target="_self">For sale</a></li>
+            <li class="layui-nav-item">
+                <a href="Favorites.html" target="_self">Favorite</a>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right" style="background-color: #BFD8D2; position: relative; right: -170px" >
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    Me
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="Personal_Information.html" target="_self">Basic Information</a></dd>
+                    <dd><a href="Favorites.html" target="_self">Favorite</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="" target="_self">Log out</a></li>
+        </ul>
+    </div>
+<div class="layui-side" style="background-color: #BFD8D2">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="Personal_Information.html" target="_self">Personal Information</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="Favorites.html" target="_self">Favorite</a>
+            </li>
+            <li class="layui-nav-item"><a href="For_sale.html" target="_self">For sale</a></li>
+            <li class="layui-nav-item"><a href="Message.html" target="_self">Message</a></li>
+            <li class="layui-nav-item"><a href="Favorites.html" target="_self">Feedback</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+  <!--logo-->
+        <div class="Favorite">
+            <ul class="site-doc-icon site-doc-anim">
+                <li>
+                    <div class="layui-anim layui-anim-upbit" data-anim="layui-anim-upbit" style="margin-left: 40%">
+                        <i class="layui-icon layui-icon-chat"style="font-size: 50px; color: #eb7350;">
+                        </i>
+                        <strong>Feedback</strong>
+                    </div>
+                </li>
+                <hr class="layui-bg-orange">
+            </ul>
+        </div>
+        <!--content-->
+        <div class="back">
+            <label class="layui-form-label" style="width: 200px;font-family: 'Microsoft YaHei UI';font-size: 1em; margin-top: 20px">Please leave your opinion:</label>
+            <div class="layui-input-inline"style="margin-top: 30px;">
+                <select name="modules" lay-verify="required" lay-search="">
+                    <option value="">Please select the type of suggestion</option>
+                    <option value="1">Production problem/产品问题</option>
+                    <option value="2">Promotion problem/促销问题</option>
+                    <option value="3">Payment problem/支付问题</option>
+                    <option value="4">Refund issue/退款问题</option>
+                    <option value="5">Delivery problem/配送问题</option>
+                    <option value="6">After sales problem/售后问题</option>
+                    <option value="7">Others</option>
+                </select>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label" style="width: 200px; margin-top: 50px;margin-left: 20px; padding-bottom: 20px">The description of the problems:</label>
+                <div class="layui-input-block" style="margin-top: 10px" >
+                    <textarea placeholder="Please enter the problems" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="demo1" style="margin-top: 20px; margin-left: 490px ">Submit</button>
+                </div>
+            </div>
+        </form>
+        <!--contact number-->
+            <ul class="site-doc-icon site-doc-anim" style="float: left;margin-left: 20px">
+                <li>
+                    <div class="layui-anim layui-anim-up" data-anim="layui-anim-upbit" >
+                        <i class="layui-icon layui-icon-cellphone-fine"style="font-size: 20px; color: #0C0C0C">
+                            <small>Consumer hotline：400-007-1234</small>
+                        </i>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

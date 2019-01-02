@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publish</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="./css/layui.css">
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .header
+        {
+            box-shadow: 0px 3px 5px 0.2px #A9A9A9;
+            height: 100px;
+            margin:0px 0px;
+            position: sticky;
+        }
+        .topics
+        {
+            display: inline-block;
+            width: 110px;
+            color:#A9A9A9;
+            text-align:center;
+            cursor: pointer;
+            font-size: 1.1em;
+            float: left;
+            line-height: 80px;
+        }
+        .link:hover
+        {
+            color: #FF3B3F;
+            cursor: pointer;
+        }
+        .link
+        {
+            text-decoration: none;
+            color: #A9A9A9;
+        }
+        input{
+            width: 200px;
+            height: 40px;
+            opacity:0.95;
+            background-color: #ffffff;
+            border:1px #e53538 solid;
+            border-top-left-radius:5px;
+            border-bottom-left-radius:5px;
+            font: 15px 'Microsoft YaHei UI';
+
+        }
+        button{
+            width:112px;
+            height: 42px;
+            background-color:#e53538;
+            opacity:0.95;
+            color:#fff;
+            border-radius:0 5px 5px 0;
+            position: relative;
+        }
+        .t{
+            border-width:6px;
+            border-style:solid;
+            border-color: transparent #e53538 transparent transparent;
+            position: absolute;
+            right:100%;
+        }
+        .triangle {
+            display: inline-block;
+            border-width: 100px;
+            border-style: solid;
+        }
+
+        .form
+        {
+            margin-left: 70px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<div class="header" >
+    <div style="background-color:#CAEBF2; width: 337px; height:100px; float: left">
+        <img src="./images/a.png" height="70" width="337"/></div>
+    <ul style="float:right; margin-top: -3px;">
+        <li class="topics">
+            <a class="link" href="" target="_self">Login</a>
+        </li>
+        <li class="topics">
+            <a class="link" href="" target="_self">Register</a>
+        </li>
+
+    </ul>
+    <ul>
+        <li class="topics" style="margin-left: 10px">
+            <a class="link" href="" target="_self">Homepage</a>
+        </li>
+        <li class="topics">
+            <a class="link" href="AllItem.html" target="_self">All Items</a>
+        </li>
+        <li class="topics">
+            <a class="link" href="For_sale.html" target="_self">For sale</a>
+        </li>
+        <li class="topics">
+            <a class="link" href="Favorites.html" target="_self">Favorites</a>
+        </li>
+        <li class="topics">
+            <a class="link" href="Feedback.html" target="_self">Contact us</a>
+        </li>
+        <form action="" >
+            <div class="form" style="float: left; margin-top: 20px">
+                <input type="text" placeholder="Search here...">
+                <button style="float: right">SEARCH
+                    <span class="t"></span>
+                </button>
+            </div>
+        </form>
+    </ul>
+</div>
+<!--content-->
+  <div class="back">
+      <!--发布闲置-->
+      <div class="layui-anim layui-anim-scale">
+      <div class="publish">
+          <a  href="#">
+              <div class="layui-inline">
+              <i class="i-web"></i>
+              <p class="p1">Publish Items</p>
+              </div>
+          </a>
+      </div>
+      </div>
+
+<!--表单-->
+<div class="table">
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label"><STRONG>Name:</STRONG></label>
+        <div class="layui-input-block">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="Please enter the brand & name" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label"><STRONG>Description:</STRONG></label>
+        <div class="layui-input-block">
+            <textarea placeholder="Please enter the description of idle items" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div><strong>Select Image:</strong></div>
+    <div class="layui-upload" style="margin-top: 20px">
+        <button type="button" class="layui-btn" id="test2" style="margin-left: 30px; margin-bottom: 10px;width: 150px; background-color:#eb7350;box-shadow: 0px 3px 5px">Select images</button>
+        <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+            Preview the image：
+            <div class="layui-upload-list" id="demo2"></div>
+        </blockquote>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"><STRONG>Price:</STRONG></label>
+        <div class="layui-input-block">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="Please enter the price" class="layui-input">
+        </div>
+</div>
+    <label class="layui-form-label"><strong>Type:</strong></label>
+    <div class="layui-input-inline">
+        <select name="modules" lay-verify="required" lay-search="">
+            <option value="">Please select one</option>
+            <option value="1">Used Books/二手书</option>
+            <option value="2">Food/食物</option>
+            <option value="3">Storage/收纳</option>
+            <option value="4">Devices/家电</option>
+            <option value="5">Cosmetic/化妆品</option>
+        </select>
+    </div>
+    <div class="layui-form-item" style="margin-top: 10px">
+        <label class="layui-form-label" style="width: 20px"><STRONG>Contact Number:</STRONG></label>
+        <div class="layui-input-block">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="Please enter the contact number" class="layui-input">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><STRONG>Wechat:</STRONG></label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="Please enter the wechat" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top: 100px; margin-left: 500px; margin-bottom: 100px">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1" style="width: 150px; background-color: #eb7350">Confirm to publish</button>
+                <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
+            </div>
+        </div>
+</form>
+</div>
+  </div>
+</body>
+</html>
+<script src="./layui.js" charset="utf-8"></script>
+<script>
+    layui.use('upload', function(){
+        var $ = layui.jquery
+            ,upload = layui.upload;
+
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#test1'
+            ,url: '/upload/'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                //如果上传失败
+                if(res.code > 0){
+                    return layer.msg('Upload Failed');
+                }
+                //上传成功
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">Upload Failed</span> <a class="layui-btn layui-btn-xs demo-reload">Retry</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+
+        //多图片上传
+        upload.render({
+            elem: '#test2'
+            ,url: '/upload/'
+            ,multiple: true
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#demo2').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+                });
+            }
+            ,done: function(res){
+                //上传完毕
+            }
+        });
+
+        //指定允许上传的文件类型
+        upload.render({
+            elem: '#test3'
+            ,url: '/upload/'
+            ,accept: 'file' //普通文件
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+        upload.render({ //允许上传的文件后缀
+            elem: '#test4'
+            ,url: '/upload/'
+            ,accept: 'file' //普通文件
+            ,exts: 'zip|rar|7z' //只允许上传压缩文件
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+        upload.render({
+            elem: '#test5'
+            ,url: '/upload/'
+            ,accept: 'video' //视频
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+        upload.render({
+            elem: '#test6'
+            ,url: '/upload/'
+            ,accept: 'audio' //音频
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+
+        //设定文件大小限制
+        upload.render({
+            elem: '#test7'
+            ,url: '/upload/'
+            ,size: 60 //限制文件大小，单位 KB
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+
+        //同时绑定多个元素，并将属性设定在元素上
+        upload.render({
+            elem: '.demoMore'
+            ,before: function(){
+                layer.tips('接口地址：'+ this.url, this.item, {tips: 1});
+            }
+            ,done: function(res, index, upload){
+                var item = this.item;
+                console.log(item); //获取当前触发上传的元素，layui 2.1.0 新增
+            }
+        })
+
+        //选完文件后不自动上传
+        upload.render({
+            elem: '#test8'
+            ,url: '/upload/'
+            ,auto: false
+            //,multiple: true
+            ,bindAction: '#test9'
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+
+        //拖拽上传
+        upload.render({
+            elem: '#test10'
+            ,url: '/upload/'
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+
+        //多文件列表示例
+        var demoListView = $('#demoList')
+            ,uploadListIns = upload.render({
+            elem: '#testList'
+            ,url: '/upload/'
+            ,accept: 'file'
+            ,multiple: true
+            ,auto: false
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
+                        ,'<td>Waiting for upload</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">Retry</button>'
+                        ,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">Delete</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                        uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                    });
+
+                    demoListView.append(tr);
+                });
+            }
+            ,done: function(res, index, upload){
+                if(res.code == 0){ //上传成功
+                    var tr = demoListView.find('tr#upload-'+ index)
+                        ,tds = tr.children();
+                    tds.eq(2).html('<span style="color: #5FB878;">Successful Upload</span>');
+                    tds.eq(3).html(''); //清空操作
+                    return delete this.files[index]; //删除文件队列已经上传成功的文件
+                }
+                this.error(index, upload);
+            }
+            ,error: function(index, upload){
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                tds.eq(2).html('<span style="color: #FF5722;">Upload Failed</span>');
+                tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+            }
+        });
+
+        //绑定原始文件域
+        upload.render({
+            elem: '#test20'
+            ,url: '/upload/'
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ]
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+        //表单初始赋值
+        form.val('example', {
+            "username": "贤心" // "name": "value"
+            ,"password": "123456"
+            ,"interest": 1
+            ,"like[write]": true //复选框选中状态
+            ,"close": true //开关状态
+            ,"sex": "女"
+            ,"desc": "我爱 layui"
+        })
+
+
+    });
+</script>
